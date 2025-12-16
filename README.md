@@ -1,14 +1,21 @@
-## Players online checker
+# Players Online Checker
 
-Checks online players and safe to file
+A small Go CLI tool that retrieves the number of online players from a remote API and stores the results in a local SQLite database.
 
-Usage:
+## Requirements
+
+- Go 1.23+ (or compatible)
+- SQLite3
+- A valid CA certificate (`.pem`) if the API uses a self-signed certificate
+
+## Usage
 
 ```bash
--ca string
-      path to CA certificate (default "ca.pem")
--db string
-      path to sqlite3 storage (default "data.sqlite3")
--url string
-      url to api (default "https://example.com")
+./checks -h
+```
+
+### Example
+
+```bash
+./checker -ca certs/ca.pem -db /var/data/players.sqlite3 -url https://example.com/get_online
 ```
