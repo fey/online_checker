@@ -11,11 +11,11 @@ A small Go CLI tool that retrieves the number of online players from a remote AP
 ## Usage
 
 ```bash
-./checks -h
+./online_checker -h
 ```
 
 ### Example
 
 ```bash
-./checker -ca certs/ca.pem -db /var/data/players.sqlite3 -url https://example.com/get_online
+./online_checker -ca certs/ca.pem -db /var/data/players.sqlite3 -url https://example.com/get_online
 ```
