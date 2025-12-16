@@ -1,2 +1,4 @@
 data.sqlite3
-build
+# Added by goreleaser init:
+dist/
+.github_token

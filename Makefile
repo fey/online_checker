@@ -3,4 +3,7 @@ run:
 	-url=$(URL)
 
 build:
-	go build -o build/checker cmd/checker/main.go
+	goreleaser release --snapshot --clean
+
+release:
+	@./bin/release.sh
