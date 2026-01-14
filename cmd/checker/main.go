@@ -14,7 +14,7 @@ import (
 	"crypto/tls"
 	"crypto/x509"
 
-	_ "github.com/mattn/go-sqlite3"
+	_ "modernc.org/sqlite"
 )
 
 type Check struct {
@@ -61,7 +61,7 @@ func main() {
 }
 
 func initDb(dbPath string) (*sql.DB, error) {
-	db, err := sql.Open("sqlite3", fmt.Sprintf("%s?_journal_mode=WAL&_busy_timeout=5000", dbPath))
+	db, err := sql.Open("sqlite", fmt.Sprintf("%s?_journal_mode=WAL&_busy_timeout=5000", dbPath))
 
 	if err != nil {
 		return nil, err
