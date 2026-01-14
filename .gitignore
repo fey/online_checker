@@ -1,4 +1,4 @@
-data.sqlite3
+data.sqlite3*
 # Added by goreleaser init:
 dist/
 .github_token
