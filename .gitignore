@@ -2,3 +2,6 @@ data.sqlite3*
 # Added by goreleaser init:
 dist/
 .github_token
+tmp
+ansible/hosts
+.vault_password

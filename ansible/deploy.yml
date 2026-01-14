@@ -1,0 +1,25 @@
+- name: Setup Online Checker
+  remote_user: root
+  hosts: all
+  gather_facts: no
+  vars:
+  tasks:
+    - name: Copy binary
+      ansible.builtin.copy:
+        src: ../dist/online_checker_linux_amd64_v1/online_checker
+        dest: /usr/local/bin/online_checker
+        mode: '777'
+
+    - name: Copy ca.pem
+      ansible.builtin.copy:
+        src: ../ca.pem
+        dest: "{{ ca_path }}"
+        mode: '644'
+
+    - name: Setup cron - run checker every 5 minutes
+      ansible.builtin.cron:
+        name: "run online checker"
+        # special_time: hourly
+        minute: "*/5"
+        state: present
+        job: "online_checker -url={{ check_url }} -ca={{ ca_path }} -db={{ db_path }}"

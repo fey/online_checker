@@ -1,0 +1,10 @@
+- name: Backup online checker data
+  hosts: all
+  remote_user: root
+  gather_facts: false
+  tasks:
+    - name: Fetch data
+      ansible.builtin.fetch:
+        src: "{{ db_path }}"
+        dest: '../tmp/'
+        flat: true

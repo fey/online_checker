@@ -1,0 +1,3 @@
+check_url: "{{ vault_check_url }}"
+ca_path: /root/ca.pem
+db_path: /root/data.sqlite3

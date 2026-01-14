@@ -7,3 +7,12 @@ build:
 
 release:
 	@./bin/release.sh
+
+ssh:
+	make -C ansible ssh
+
+deploy:
+	make -C ansible deploy
+
+fetch:
+	make -C ansible fetch
